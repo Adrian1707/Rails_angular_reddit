@@ -6,6 +6,9 @@ angular.module('redditNews', [])
       if(!$scope.title || $scope.title === '') {return; }
       $scope.posts.push({title: $scope.title, upvotes: 0});
       };
+    $scope.incrementUpvotes = function(post){
+      post.upvotes += 1;
+      };
       $scope.test = 'Hello world!';
       $scope.posts = [
         {title: 'post 1', upvotes: 5},
