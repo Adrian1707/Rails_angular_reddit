@@ -1,7 +1,15 @@
 angular.module('redditNews', [])
+.factory('posts', [function(){
+    var o = {
+      posts: []
+    };
+    return o;
+}])
 .controller('MainCtrl', [
   '$scope',
-  function($scope){
+  'posts',
+  function($scope, posts){
+    $scope.posts = posts.posts;
     $scope.addPost = function(){
       if(!$scope.title || $scope.title === '') {return; }
       $scope.posts.push({title: $scope.title, link: $scope.link, upvotes: 0});
