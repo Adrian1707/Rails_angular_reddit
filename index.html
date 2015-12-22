@@ -3,12 +3,14 @@
     <title>Readdit</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="app.js"></script>
      <style> .glyphicon-thumbs-up { cursor:pointer } </style>
   </head>
   <body ng-app="redditNews" ng-controller="MainCtrl">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
+        <ui-view></ui-view>
 
           <div class="page-header">
             <h1>Readdit</h1>
@@ -33,16 +35,23 @@
             <div class="form-group">
               <input type="text"
                      ng-model="title"
+                     placeholder="Website Name..."
                      class="form-control"></input>
             </div>
             <div class="form-group">
             <input type="text"
                    ng-model="link"
+                   placeholder="Website link..."
                    class="form-control"></input>
             </div>
             <button type="submit" class="btn btn-primary">Post</button>
           </form>
       </div>
     </div>
+    <script type="text/ng-template" id="/home.html">
+      <div class="page-header">
+        <h1>Flapper News</h1>
+      </div>
+  </script>
   </body>
 </html>
