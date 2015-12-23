@@ -1,0 +1,23 @@
+{
+  "name": "readdit-news",
+  "homepage": "https://github.com/Adrian1707/Rails_angular_reddit",
+  "authors": [
+    "Adrian Booth <Adrian.booth17@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "~3.3.6"
+  }
+}
