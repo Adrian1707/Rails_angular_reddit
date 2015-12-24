@@ -16,7 +16,13 @@ function($scope, post, posts){
    });
    $scope.body = '';
   };
-$scope.incrementUpvotes = function(post){
+
+  $scope.incrementUpvotes = function(post){
   comment.upvotes += 1;
   };
-}]);
+
+  $scope.incrementUpvotes = function(comment){
+    posts.upvoteComment(post,comment);
+  };
+
+  }]);
