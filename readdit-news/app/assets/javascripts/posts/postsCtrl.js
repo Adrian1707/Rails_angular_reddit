@@ -1,20 +1,21 @@
 angular.module('redditNews')
 .controller('PostsCtrl', [
 '$scope',
-'$stateParams',
+'post',
 'posts',
-function($scope, $stateParams, posts){
-   $scope.post = posts.posts[$stateParams.id];
+function($scope, post, posts){
+   $scope.post = post;
 
    $scope.addComment = function(){
-    if($scope.body === '') { return; }
-    $scope.post.comments.push({
-      body: $scope.body,
-      author: 'user',
-      upvotes: 0
-    });
-    $scope.body = '';
-};
+   if($scope.body === '') { return; }
+   posts.addComment(post.id, {
+     body: $scope.body,
+     author: 'user',
+   }).success(function(comment) {
+     $scope.post.comments.push(comment);
+   });
+   $scope.body = '';
+  };
 $scope.incrementUpvotes = function(post){
   comment.upvotes += 1;
   };
