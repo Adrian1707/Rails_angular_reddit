@@ -5,6 +5,7 @@ angular.module('redditNews')
   function($scope, posts){
     $scope.posts = posts.posts;
 
+
     $scope.addPost = function(){
       if(!$scope.title || $scope.title === '') {return; }
       posts.create({
@@ -14,6 +15,6 @@ angular.module('redditNews')
       $scope.link = '';
   }
     $scope.incrementUpvotes = function(post){
-      post.upvotes += 1;
+      posts.upvote(post);
       };
   }])
